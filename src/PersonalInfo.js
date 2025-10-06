@@ -5,7 +5,7 @@ import Role from './components/atoms/Role';
 import TechStack from './components/atoms/TechStack';
 
 // ✅ PersonalInfo Component (only one definition)
-function PersonalInfo({ name, role, techStack }) {
+function PersonalInfo({ name, role, techStack, onTechStackClick }) {
     const [hovered, setHovered] = useState(false);
 
     return (
@@ -16,7 +16,7 @@ function PersonalInfo({ name, role, techStack }) {
         >
             <Name>{name}</Name>
             <Role>{role}</Role>
-            <TechStack>{techStack}</TechStack>
+            <TechStack onClick={onTechStackClick}>{techStack}</TechStack>
         </Card>
     );
 }

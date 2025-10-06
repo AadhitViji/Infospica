@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function TechStack({ children }) {
+function TechStack({ children, onClick }) {
     const [showTooltip, setShowTooltip] = useState(false);
 
     const stackStyle = {
@@ -8,8 +8,9 @@ function TechStack({ children }) {
         color: '#718096',
         position: 'relative',
         display: 'inline-block',
-        cursor: 'pointer',
-        marginBottom: '8px'
+        cursor: onClick ? 'pointer' : 'default',
+        marginBottom: '8px',
+        // Removed textDecoration
     };
 
     const tooltipStyle = {
@@ -34,9 +35,13 @@ function TechStack({ children }) {
             style={stackStyle}
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
+            onClick={onClick}
         >
             Favorite Tech Stack: {children}
-            <div style={tooltipStyle}>This is my favorite tech stack</div>
+            <div style={tooltipStyle}>
+                This is my favorite tech stack.<br />
+                <span style={{ fontWeight: 'bold' }}>Click to view all skills.</span>
+            </div>
         </div>
     );
 }

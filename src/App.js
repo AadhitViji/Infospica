@@ -1,5 +1,5 @@
 // Filename - App.js
-import React from 'react';
+import React, { useState } from 'react';
 import PersonalInfo from './PersonalInfo';
 import SkillsShowcase from './components/SkillsShowcase';
 
@@ -15,10 +15,11 @@ function App() {
         { name: 'JavaScript', level: 'Advanced' },
         { name: 'Tailwind CSS', level: 'Intermediate' },
         { name: 'MongoDB', level: 'Intermediate' },
-        { name: 'Node.js', level: 'Advanced' },
-        { name: 'Express.js', level: 'Intermediate' },
-        { name: 'GraphQL' } // No level, will not render level badge
+        { name: 'Node.js', level: 'Beginner' }, 
+        { name: 'Express.js' } // No level, will not render level badge 
     ];
+
+    const [showSkills, setShowSkills] = useState(false);
 
     return (
         <div>
@@ -27,8 +28,9 @@ function App() {
                 name="Aadhit Viji"
                 role="Full Stack Developer"
                 techStack="React, TypeScript, JavaScript, Tailwind CSS, MongoDB, Node.js, Express.js"
+                onTechStackClick={() => setShowSkills(prev => !prev)}
             />
-            <SkillsShowcase skills={skills} />
+            {showSkills && <SkillsShowcase skills={skills} />}
         </div>
     );
 }
