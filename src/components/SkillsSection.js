@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
-import SkillsShowcase from './SkillsShowcase';
+import React from 'react';
 import TechStack from './TechStack';
 import personalInfo from '../data/personalInfo';
+import { useNavigate } from 'react-router-dom';
 
 const SkillsSection = () => {
-    const [showSkills, setShowSkills] = useState(false);
+    const navigate = useNavigate();
 
     return (
         <>
-            <TechStack onClick={() => setShowSkills(prev => !prev)}>
+            <TechStack onClick={() => navigate('/tech-showcases')}>
                 {personalInfo.skills.map(skill => skill.name).join(', ')}
             </TechStack>
-            {showSkills && <SkillsShowcase skills={personalInfo.skills} />}
         </>
     );
 };
