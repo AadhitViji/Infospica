@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import Card from './components/Card';
 import Name from './components/atoms/Name';
 import Role from './components/atoms/Role';
-import TechStack from './components/atoms/TechStack';
 
-// ✅ PersonalInfo Component (only one definition)
-function PersonalInfo({ name, role, techStack, onTechStackClick }) {
+const PersonalInfo = ({ name, role, techStackComponent }) => {
     const [hovered, setHovered] = useState(false);
 
     return (
@@ -16,9 +14,9 @@ function PersonalInfo({ name, role, techStack, onTechStackClick }) {
         >
             <Name>{name}</Name>
             <Role>{role}</Role>
-            <TechStack onClick={onTechStackClick}>{techStack}</TechStack>
+            {techStackComponent}
         </Card>
     );
-}
+};
 
 export default PersonalInfo;
