@@ -1,5 +1,5 @@
 import React from 'react';
-import Skill from './atoms/Skill';
+import Skill from './Skill';
 
 function SkillsShowcase({ skills }) {
     return (

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SkillsShowcase from './SkillsShowcase';
-import TechStack from './atoms/TechStack';
+import TechStack from './TechStack';
 import personalInfo from '../data/personalInfo';
 
 const SkillsSection = () => {
