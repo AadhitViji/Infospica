@@ -1,34 +1,32 @@
 import React, { useState } from 'react';
 
+// Name Component
 function Name({ children }) {
-    return (
-        <div style={{
-            fontSize: '1.5rem',
-            fontWeight: 'bold',
-            marginBottom: '16px',
-            color: '#2d3748',
-            letterSpacing: '1px'
-        }}>
-            {children}
-        </div>
-    );
+    const nameStyle = {
+        fontSize: '1.5rem',
+        fontWeight: 'bold',
+        color: '#2D3748',
+        marginBottom: '8px'
+    };
+    return <div style={nameStyle}>{children}</div>;
 }
 
+// Role Component
 function Role({ children }) {
     const [showTooltip, setShowTooltip] = useState(false);
 
     const roleStyle = {
         fontSize: '1.1rem',
-        marginBottom: '16px',
-        color: '#4a5568',
+        color: '#4A5568',
         position: 'relative',
         display: 'inline-block',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        marginBottom: '8px'
     };
 
     const tooltipStyle = {
         visibility: showTooltip ? 'visible' : 'hidden',
-        background: '#222',
+        background: '#333',
         color: '#fff',
         textAlign: 'center',
         borderRadius: '4px',
@@ -50,13 +48,12 @@ function Role({ children }) {
             onMouseLeave={() => setShowTooltip(false)}
         >
             {children}
-            <div style={tooltipStyle}>
-                This is my professional role
-            </div>
+            <div style={tooltipStyle}>This is my professional role</div>
         </div>
     );
 }
 
+// TechStack Component
 function TechStack({ children }) {
     const [showTooltip, setShowTooltip] = useState(false);
 
@@ -93,13 +90,12 @@ function TechStack({ children }) {
             onMouseLeave={() => setShowTooltip(false)}
         >
             Favorite Tech Stack: {children}
-            <div style={tooltipStyle}>
-                This is my favorite tech stack
-            </div>
+            <div style={tooltipStyle}>This is my favorite tech stack</div>
         </div>
     );
 }
 
+// PersonalInfo Component
 function PersonalInfo({ name, role, techStack }) {
     const containerStyle = {
         border: '1px solid #ccc',
