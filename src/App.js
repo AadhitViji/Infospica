@@ -7,6 +7,7 @@ import "./App.css"; // Import the CSS file
 import { Routes, Route, Link } from "react-router-dom";
 import TechShowcases from "./pages/TechShowcases";
 import EventsPage from "./pages/EventsPage";
+import ConditionsPage from "./pages/ConditionsPage";
 
 const App = () => {
   return (
@@ -25,11 +26,15 @@ const App = () => {
               <Link to="/events" className="events-button">
                 Events Demo
               </Link>
+              <Link to="/conditions" className="conditions-nav-button">
+                Conditions Demo
+              </Link>
             </>
           }
         />
         <Route path="/tech-showcases" element={<TechShowcases />} />
         <Route path="/events" element={<EventsPage />} />
+        <Route path="/conditions" element={<ConditionsPage />} />
       </Routes>
     </div>
   );

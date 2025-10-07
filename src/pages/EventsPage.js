@@ -43,78 +43,51 @@ const EventsPage = () => {
   };
 
   return (
-    <div
-      className="events-container"
-      style={{
-        maxWidth: "800px",
-        margin: "0 auto",
-        padding: "20px",
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
+    <div className="conditions-container">
       <h1>Events Demo</h1>
 
-      <div style={{ marginBottom: "20px" }}>
+      <div className="conditions-section">
         <h2>onChange Event</h2>
+        <label htmlFor="changeInput" className="conditions-label">Type something</label>
         <input
+          id="changeInput"
+          className="conditions-input"
           type="text"
           value={inputValue}
           onChange={handleInputChange}
           placeholder="Type something..."
-          style={{
-            padding: "8px",
-            width: "100%",
-            marginBottom: "10px",
-          }}
         />
-        <p>Current value: {inputValue}</p>
+        <p className="conditions-badge">Current value: {inputValue || 'Empty'}</p>
       </div>
 
-      <div style={{ marginBottom: "20px" }}>
+      <div className="conditions-section">
         <h2>onClick Event</h2>
-        <button
-          onClick={handleButtonClick}
-          style={{
-            padding: "10px 20px",
-            cursor: "pointer",
-            backgroundColor: "#4CAF50",
-            color: "white",
-            border: "none",
-            borderRadius: "4px",
-          }}
+        <button onClick={handleButtonClick} className="demo-button">Click me!</button>
+      </div>
+
+      <div className="conditions-section">
+        <h2>onMouseOver / onMouseOut</h2>
+        <div
+          className={`hover-box ${isHovered ? 'hovered' : ''}`}
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
         >
-          Click me!
-        </button>
+          <p>Hover over this area to see the effect</p>
+          <p>Hover state: {isHovered ? 'Hovered' : 'Not hovered'}</p>
+        </div>
       </div>
 
-      <div
-        style={{
-          marginBottom: "20px",
-          padding: "20px",
-          backgroundColor: isHovered ? "#f0f0f0" : "#ffffff",
-          border: "1px solid #ddd",
-          transition: "background-color 0.3s",
-        }}
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
-      >
-        <h2>onMouseOver/onMouseOut Events</h2>
-        <p>Hover over this area to see the effect</p>
-        <p>Hover state: {isHovered ? "Hovered" : "Not hovered"}</p>
-      </div>
-
-      <div style={{ marginBottom: "20px" }}>
+      <div className="conditions-section">
         <h2>onKeyDown Event</h2>
+        <label htmlFor="keyInput" className="conditions-label">Press any key inside the input</label>
         <input
+          id="keyInput"
+          className="conditions-input"
           type="text"
           onKeyDown={handleKeyDown}
           placeholder="Press any key..."
-          style={{
-            padding: "8px",
-            width: "100%",
-          }}
         />
-        <p>Last key pressed: {keyPressed || "None"}</p>
+        <p className="conditions-badge">Last key pressed: {keyPressed || 'None'}</p>
       </div>
 
       <BackButton />
