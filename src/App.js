@@ -10,6 +10,7 @@ import EventsPage from "./pages/EventsPage";
 import ConditionsPage from "./pages/ConditionsPage";
 import LoopsPage from "./pages/LoopsPage";
 import FunctionsPage from "./pages/FunctionsPage";
+import ArraysPage from "./pages/ArraysPage";
 
 const App = () => {
   return (
@@ -37,6 +38,9 @@ const App = () => {
               <Link to="/functions" className="functions-nav-button">
                 Functions Demo
               </Link>
+              <Link to="/arrays" className="arrays-nav-button">
+                Arrays Demo
+              </Link>
             </>
           }
         />
@@ -45,6 +49,7 @@ const App = () => {
         <Route path="/conditions" element={<ConditionsPage />} />
         <Route path="/loops" element={<LoopsPage />} />
         <Route path="/functions" element={<FunctionsPage />} />
+        <Route path="/arrays" element={<ArraysPage />} />
       </Routes>
     </div>
   );
