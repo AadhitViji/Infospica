@@ -57,6 +57,7 @@ function SkillsShowcase({ skills }) {
             name={skill.name}
             level={skill.level}
             icon={getIcon(skill.name)}
+            onClick={() => console.log(`(${skill.name} clicked)`)}
           />
         ))}
       </div>

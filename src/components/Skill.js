@@ -1,6 +1,6 @@
 import React from "react";
 
-function Skill({ name, level, icon }) {
+function Skill({ name, level, icon, onClick }) {
   const levelColor =
     {
       Beginner: "#e53e3e",
@@ -11,6 +11,7 @@ function Skill({ name, level, icon }) {
 
   return (
     <div
+      onClick={onClick}
       style={{
         background: "#111",
         borderRadius: 12,
@@ -25,6 +26,7 @@ function Skill({ name, level, icon }) {
         minWidth: 110,
         minHeight: 120,
         color: "#e2e8f0",
+        cursor: onClick ? 'pointer' : 'default'
       }}
     >
       {icon && (

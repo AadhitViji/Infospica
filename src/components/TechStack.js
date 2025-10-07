@@ -35,12 +35,10 @@ function TechStack({ children, onClick }) {
             style={stackStyle}
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
-            onClick={onClick}
         >
             Favorite Tech Stack: {children}
             <div style={tooltipStyle}>
-                This is my favorite tech stack.<br />
-                <span style={{ fontWeight: 'bold' }}>Click to view all skills.</span>
+                This is my favorite tech stack.
             </div>
         </div>
     );
