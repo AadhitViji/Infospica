@@ -9,6 +9,7 @@ import TechShowcases from "./pages/TechShowcases";
 import EventsPage from "./pages/EventsPage";
 import ConditionsPage from "./pages/ConditionsPage";
 import LoopsPage from "./pages/LoopsPage";
+import FunctionsPage from "./pages/FunctionsPage";
 
 const App = () => {
   return (
@@ -33,6 +34,9 @@ const App = () => {
               <Link to="/loops" className="loops-nav-button">
                 Loops Demo
               </Link>
+              <Link to="/functions" className="functions-nav-button">
+                Functions Demo
+              </Link>
             </>
           }
         />
@@ -40,6 +44,7 @@ const App = () => {
         <Route path="/events" element={<EventsPage />} />
         <Route path="/conditions" element={<ConditionsPage />} />
         <Route path="/loops" element={<LoopsPage />} />
+        <Route path="/functions" element={<FunctionsPage />} />
       </Routes>
     </div>
   );
