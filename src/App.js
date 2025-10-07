@@ -4,8 +4,9 @@ import PersonalInfo from "./PersonalInfo";
 import SkillsSection from "./components/SkillsSection";
 import personalInfo from "./data/personalInfo";
 import "./App.css"; // Import the CSS file
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import TechShowcases from "./pages/TechShowcases";
+import EventsPage from "./pages/EventsPage";
 
 const App = () => {
   return (
@@ -21,10 +22,14 @@ const App = () => {
                 role={personalInfo.role}
                 techStackComponent={<SkillsSection />}
               />
+              <Link to="/events" className="events-button">
+                Events Demo
+              </Link>
             </>
           }
         />
         <Route path="/tech-showcases" element={<TechShowcases />} />
+        <Route path="/events" element={<EventsPage />} />
       </Routes>
     </div>
   );

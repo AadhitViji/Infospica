@@ -30,14 +30,14 @@ function Role({ children }) {
   };
 
   return (
-    <div
+    <h3
       style={roleStyle}
       onMouseEnter={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
     >
       {children}
       <div style={tooltipStyle}>This is my professional role</div>
-    </div>
+    </h3>
   );
 }
 

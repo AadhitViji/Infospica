@@ -33,6 +33,26 @@
   color: #61dafb;
 }
 
+.events-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  max-width: 200px;
+}
+
+.events-button:hover {
+  background-color: #45a049;
+  text-decoration: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -2,7 +2,7 @@ import React from "react";
 
 function Name({ children }) {
   return (
-    <div
+    <h1
       style={{
         fontSize: "1.5rem",
         fontWeight: "bold",
@@ -11,7 +11,7 @@ function Name({ children }) {
       }}
     >
       {children}
-    </div>
+    </h1>
   );
 }
 
