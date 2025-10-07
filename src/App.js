@@ -8,6 +8,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import TechShowcases from "./pages/TechShowcases";
 import EventsPage from "./pages/EventsPage";
 import ConditionsPage from "./pages/ConditionsPage";
+import LoopsPage from "./pages/LoopsPage";
 
 const App = () => {
   return (
@@ -29,12 +30,16 @@ const App = () => {
               <Link to="/conditions" className="conditions-nav-button">
                 Conditions Demo
               </Link>
+              <Link to="/loops" className="loops-nav-button">
+                Loops Demo
+              </Link>
             </>
           }
         />
         <Route path="/tech-showcases" element={<TechShowcases />} />
         <Route path="/events" element={<EventsPage />} />
         <Route path="/conditions" element={<ConditionsPage />} />
+        <Route path="/loops" element={<LoopsPage />} />
       </Routes>
     </div>
   );
