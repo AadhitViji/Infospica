@@ -9,7 +9,7 @@ function Role({ children }) {
     position: "relative",
     display: "inline-block",
     cursor: "pointer",
-    marginBottom: "8px",
+    marginBottom: "30px",
   };
 
   const tooltipStyle = {

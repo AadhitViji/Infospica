@@ -7,7 +7,7 @@ function Name({ children }) {
         fontSize: "1.5rem",
         fontWeight: "bold",
         color: "#2D3748",
-        marginBottom: "8px",
+        marginBottom: "0px",
       }}
     >
       {children}

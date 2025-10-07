@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import BackButton from "../components/BackButton";
 
 const EventsPage = () => {
   const [inputValue, setInputValue] = useState("");
   const [isHovered, setIsHovered] = useState(false);
   const [keyPressed, setKeyPressed] = useState("");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // onLoad event
   useEffect(() => {
@@ -111,26 +112,12 @@ const EventsPage = () => {
           style={{
             padding: "8px",
             width: "100%",
-            marginBottom: "10px",
           }}
         />
         <p>Last key pressed: {keyPressed || "None"}</p>
       </div>
 
-      <button
-        onClick={() => navigate("/")}
-        style={{
-          padding: "10px 20px",
-          cursor: "pointer",
-          backgroundColor: "#2196F3",
-          color: "white",
-          border: "none",
-          borderRadius: "4px",
-          marginTop: "20px",
-        }}
-      >
-        Back to Home
-      </button>
+      <BackButton />
     </div>
   );
 };
