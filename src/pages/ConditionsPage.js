@@ -69,34 +69,30 @@ const ConditionsPage = () => {
 
   // Derived values
   const ifMessage = () => {
-    let text = "";
     const ageVal = Number(number);
-    if (number === "") text = "Enter your age";
-    if (Number.isNaN(ageVal)) text = "Not a valid number";
-
+    if (number === "") return "Enter your age";
+    if (Number.isNaN(ageVal)) return "Not a valid number";
     if (ageVal >= 18) {
-      text = "You can drive";
+      return "You can drive";
     }
     if (ageVal <= 18) {
-      text = "You can drive with adult supervision";
+      return "You can drive with adult supervision";
     }
-    return text;
   };
 
   // If...Else example: greeting by hour
   const greetingMessage = () => {
     const h = Number(hour);
-    let greeting = "";
-    if (hour === "") greeting = "Enter hour (0-23)";
-    if (Number.isNaN(h)) greeting = "Not a valid number";
-    if (h < 0 || h > 23) greeting = "Hour must be between 0 and 23";
+
+    if (hour === "") return "Enter hour (0-23)";
+    if (Number.isNaN(h)) return "Not a valid number";
+    if (h < 0 || h > 23) return "Hour must be between 0 and 23";
 
     if (h < 18) {
-      greeting = "Good day";
+      return "Good day";
     } else {
-      greeting = "Good evening";
+      return "Good evening";
     }
-    return greeting;
   };
 
   const gradeMessage = () => {

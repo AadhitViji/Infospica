@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import BackButton from '../components/BackButton';
+import React, { useEffect, useState } from "react";
+import BackButton from "../components/BackButton";
 
 const LoopsPage = () => {
- 
-  const [forCount, setForCount] = useState('');
-  const [whileStart, setWhileStart] = useState('');
-  const [doStart, setDoStart] = useState('');
-  const [bcMax, setBcMax] = useState('');
+  const [forCount, setForCount] = useState("");
+  const [whileStart, setWhileStart] = useState("");
+  const [doStart, setDoStart] = useState("");
+  const [bcMax, setBcMax] = useState("");
 
   useEffect(() => {
-    console.log('LoopsPage loaded');
+    console.log("LoopsPage loaded");
   }, []);
 
   //console
@@ -30,71 +29,70 @@ const LoopsPage = () => {
     console.log(`Break/Continue max changed: ${e.target.value}`);
   };
 
-  
   const forLoopOutput = () => {
     const n = Number(forCount);
-    if (forCount === '') return 'Enter a count (0-50)';
-    if (Number.isNaN(n)) return 'Not a valid number';
-    if (n < 0 || n > 50) return 'Count must be 0-50';
+    if (forCount === "") return "Enter a count (0-50)";
+    if (Number.isNaN(n)) return "Not a valid number";
+    if (n < 0 || n > 50) return "Count must be 0-50";
     const arr = [];
     for (let i = 0; i < n; i++) {
       arr.push(i);
     }
-    console.log('For loop result:', arr);
-    return arr.join(', ');
+    console.log("For loop result:", arr);
+    return arr.join(", ");
   };
 
   const whileLoopOutput = () => {
     const start = Number(whileStart);
-    if (whileStart === '') return 'Enter a start (0-10)';
-    if (Number.isNaN(start)) return 'Not a valid number';
-    if (start < 0 || start > 10) return 'Start must be 0-10';
+    if (whileStart === "") return "Enter a start (0-10)";
+    if (Number.isNaN(start)) return "Not a valid number";
+    if (start < 0 || start > 10) return "Start must be 0-10";
     const out = [];
     let i = start;
     while (i >= 0) {
       out.push(i);
       i--;
     }
-    console.log('While loop result:', out);
-    return out.join(' → ');
+    console.log("While loop result:", out);
+    return out.join(" → ");
   };
 
   const doWhileOutput = () => {
     const start = Number(doStart);
-    if (doStart === '') return 'Enter a start (0-5)';
-    if (Number.isNaN(start)) return 'Not a valid number';
-    if (start < 0 || start > 5) return 'Start must be 0-5';
+    if (doStart === "") return "Enter a start (0-5)";
+    if (Number.isNaN(start)) return "Not a valid number";
+    if (start < 0 || start > 5) return "Start must be 0-5";
     const out = [];
     let i = start;
     do {
       out.push(i);
       i++;
     } while (i <= start + 3);
-    console.log('Do...while result:', out);
-    return out.join(' -> ');
+    console.log("Do...while result:", out);
+    return out.join(" → ");
   };
 
   const breakContinueOutput = () => {
     const max = Number(bcMax);
-    if (bcMax === '') return 'Enter a max (1-20)';
-    if (Number.isNaN(max)) return 'Not a valid number';
-    if (max < 1 || max > 20) return 'Max must be 1-20';
+    if (bcMax === "") return "Enter a max (1-20)";
+    if (Number.isNaN(max)) return "Not a valid number";
+    if (max < 1 || max > 20) return "Max must be 1-20";
     const out = [];
     for (let i = 1; i <= max; i++) {
       if (i === 3) {
         // continue example: skip 3
-        console.log('continue at i=3');
+        console.log("continue at i=3");
         continue;
       }
       if (i === 8) {
         // break example: stop at 8
-        console.log('break at i=8');
+        console.log("break at i=8");
         break;
       }
       out.push(i);
     }
-    console.log('Break/Continue result:', out);
-    return out.join(', ');
+    console.log("Break/Continue result:", out);
+    return out.join(", ");
   };
 
   return (
@@ -103,7 +101,9 @@ const LoopsPage = () => {
 
       <div className="conditions-section">
         <h2>for</h2>
-        <label htmlFor="forCount" className="conditions-label">Count (0-50)</label>
+        <label htmlFor="forCount" className="conditions-label">
+          Count (0-50)
+        </label>
         <input
           id="forCount"
           className="conditions-input"
@@ -118,7 +118,9 @@ const LoopsPage = () => {
 
       <div className="conditions-section">
         <h2>while</h2>
-        <label htmlFor="whileStart" className="conditions-label">Start (0-10)</label>
+        <label htmlFor="whileStart" className="conditions-label">
+          Start (0-10)
+        </label>
         <input
           id="whileStart"
           className="conditions-input"
@@ -133,7 +135,9 @@ const LoopsPage = () => {
 
       <div className="conditions-section">
         <h2>do...while</h2>
-        <label htmlFor="doStart" className="conditions-label">Start (0-5)</label>
+        <label htmlFor="doStart" className="conditions-label">
+          Start (0-5)
+        </label>
         <input
           id="doStart"
           className="conditions-input"
@@ -148,7 +152,9 @@ const LoopsPage = () => {
 
       <div className="conditions-section">
         <h2>break & continue</h2>
-        <label htmlFor="bcMax" className="conditions-label">Max (1-20)</label>
+        <label htmlFor="bcMax" className="conditions-label">
+          Max (1-20)
+        </label>
         <input
           id="bcMax"
           className="conditions-input"
@@ -157,7 +163,9 @@ const LoopsPage = () => {
           onChange={handleBcMax}
           placeholder="Enter max"
         />
-        <div className="conditions-helper">Skips 3 (continue), stops at 8 (break)</div>
+        <div className="conditions-helper">
+          Skips 3 (continue), stops at 8 (break)
+        </div>
         <p className="conditions-badge">{breakContinueOutput()}</p>
       </div>
 
