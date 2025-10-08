@@ -26,7 +26,7 @@ const PromisesPage = () => {
   const myCalculator = (num1, num2) => num1 + num2;
   const runCallbackDemo = () => myDisplayer(myCalculator(5, 5));
 
-  // Promises (simulate XHR with timeout)
+  // Promises
   const runPromiseDemo = (shouldResolve = true) => {
     setPromiseStatus("Pending...");
     setPromiseValue("");
@@ -71,7 +71,7 @@ const PromisesPage = () => {
   };
   const runAwaitDemo = async () => {
     const myPromise = new Promise((resolve) =>
-      setTimeout(() => resolve("bye!!"), 600)
+      setTimeout(() => resolve("bye!!"), 2000)
     );
     const value = await myPromise;
     setAwaitValue(String(value));
