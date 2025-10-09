@@ -14,7 +14,7 @@ import ArraysPage from "./pages/ArraysPage";
 import PromisesPage from "./pages/PromisesPage";
 import StringsPage from "./pages/StringsPage";
 import MathPage from "./pages/MathPage";
-import NewPage3 from "./pages/NewPage3";
+import DatatypesPage from "./pages/DatatypesPage";
 import NewPage4 from "./pages/NewPage4";
 import NewPage5 from "./pages/NewPage5";
 import NewPage6 from "./pages/NewPage6";
@@ -59,8 +59,8 @@ const App = () => {
                 <Link to="/maths" className="grid-button">
                   Math Demo
                 </Link>
-                <Link to="/new3" className="grid-button">
-                  New Page 3
+                <Link to="/datatypes" className="grid-button">
+                  Datatypes (Type Conversion)
                 </Link>
                 <Link to="/new4" className="grid-button">
                   New Page 4
@@ -84,7 +84,7 @@ const App = () => {
         <Route path="/promises" element={<PromisesPage />} />
         <Route path="/strings" element={<StringsPage />} />
         <Route path="/maths" element={<MathPage />} />
-        <Route path="/new3" element={<NewPage3 />} />
+        <Route path="/datatypes" element={<DatatypesPage />} />
         <Route path="/new4" element={<NewPage4 />} />
         <Route path="/new5" element={<NewPage5 />} />
         <Route path="/new6" element={<NewPage6 />} />
