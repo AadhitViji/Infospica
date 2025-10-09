@@ -13,7 +13,7 @@ import FunctionsPage from "./pages/FunctionsPage";
 import ArraysPage from "./pages/ArraysPage";
 import PromisesPage from "./pages/PromisesPage";
 import StringsPage from "./pages/StringsPage";
-import NewPage2 from "./pages/NewPage2";
+import MathPage from "./pages/MathPage";
 import NewPage3 from "./pages/NewPage3";
 import NewPage4 from "./pages/NewPage4";
 import NewPage5 from "./pages/NewPage5";
@@ -56,8 +56,8 @@ const App = () => {
                 <Link to="/strings" className="grid-button">
                   Strings Demo
                 </Link>
-                <Link to="/new2" className="grid-button">
-                  New Page 2
+                <Link to="/maths" className="grid-button">
+                  Math Demo
                 </Link>
                 <Link to="/new3" className="grid-button">
                   New Page 3
@@ -83,7 +83,7 @@ const App = () => {
         <Route path="/arrays" element={<ArraysPage />} />
         <Route path="/promises" element={<PromisesPage />} />
         <Route path="/strings" element={<StringsPage />} />
-        <Route path="/new2" element={<NewPage2 />} />
+        <Route path="/maths" element={<MathPage />} />
         <Route path="/new3" element={<NewPage3 />} />
         <Route path="/new4" element={<NewPage4 />} />
         <Route path="/new5" element={<NewPage5 />} />
