@@ -16,7 +16,7 @@ import StringsPage from "./pages/StringsPage";
 import MathPage from "./pages/MathPage";
 import DatatypesPage from "./pages/DatatypesPage";
 import ErrorPage from "./pages/ErrorPage";
-import NewPage5 from "./pages/NewPage5";
+import GraphicsPage from "./pages/GraphicsPage";
 import NewPage6 from "./pages/NewPage6";
 
 const App = () => {
@@ -61,8 +61,8 @@ const App = () => {
                 <Link to="/errors" className="errors-nav-button">
                   Error Handling Demo
                 </Link>
-                <Link to="/new5" className="grid-button">
-                  New Page 5
+                <Link to="/graphics" className="graphics-nav-button">
+                  Graphics Demo
                 </Link>
                 <Link to="/new6" className="grid-button">
                   New Page 6
@@ -84,7 +84,7 @@ const App = () => {
         <Route path="/maths" element={<MathPage />} />
         <Route path="/datatypes" element={<DatatypesPage />} />
         <Route path="/errors" element={<ErrorPage />} />
-        <Route path="/new5" element={<NewPage5 />} />
+        <Route path="/graphics" element={<GraphicsPage />} />
         <Route path="/new6" element={<NewPage6 />} />
         <Route path="/strings" element={<StringsPage />} />
       </Routes>
