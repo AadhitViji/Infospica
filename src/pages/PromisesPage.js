@@ -51,13 +51,13 @@ const PromisesPage = () => {
     );
   };
 
-  // Asynchronous (callback form of myCalculator)
-  const asyncMyDisplayer = (something) => setAsyncCbValue(String(something));
-  const asyncMyCalculator = (num1, num2, myCallback) => {
-    const sum = num1 + num2;
-    myCallback(sum);
+  // Asynchronous (callback) demo — using setTimeout
+  const runAsyncCallbackDemo = () => {
+    setAsyncCbValue("Fetching data...");
+    setTimeout(() => {
+      setAsyncCbValue("Data received after 2 seconds");
+    }, 2000);
   };
-  const runAsyncCallbackDemo = () => asyncMyCalculator(5, 5, asyncMyDisplayer);
 
   // Async/Await
   async function asyncHello() {
@@ -128,7 +128,9 @@ const PromisesPage = () => {
       {/* Asynchronous */}
       <div className="conditions-section">
         <h2>Asynchronous (Callback)</h2>
-        <div className="conditions-helper">myCalculator(5, 5, myDisplayer)</div>
+        <div className="conditions-helper">
+          Simulated delayed data fetch (2s) using setTimeout
+        </div>
         <div className="checkbox-row" style={{ gap: 8 }}>
           <button
             className="demo-button"
