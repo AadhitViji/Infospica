@@ -56,6 +56,7 @@
 .home-grid .datatypes-nav-button,
 .home-grid .errors-nav-button,
 .home-grid .graphics-nav-button,
+.home-grid .webapi-nav-button,
 .home-grid .grid-button {
   display: block;
   width: 100%;
@@ -78,6 +79,7 @@
 .home-grid .datatypes-nav-button:hover,
 .home-grid .errors-nav-button:hover,
 .home-grid .graphics-nav-button:hover,
+.home-grid .webapi-nav-button:hover,
 .home-grid .grid-button:hover {
   text-decoration: none;
 }
@@ -288,6 +290,27 @@
 
 .graphics-nav-button:hover {
   background-color: #1400c7;
+  text-decoration: none;
+}
+
+/* Web API page nav button */
+.webapi-nav-button {
+  display: block;
+  margin: 10px auto 0; 
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #1a008e; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  max-width: 200px;
+} 
+
+.webapi-nav-button:hover {
+  background-color: #6c009a;
   text-decoration: none;
 }
 

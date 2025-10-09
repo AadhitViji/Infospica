@@ -17,7 +17,7 @@ import MathPage from "./pages/MathPage";
 import DatatypesPage from "./pages/DatatypesPage";
 import ErrorPage from "./pages/ErrorPage";
 import GraphicsPage from "./pages/GraphicsPage";
-import NewPage6 from "./pages/NewPage6";
+import WebAPIPage from "./pages/WebAPIPage";
 
 const App = () => {
   return (
@@ -64,8 +64,8 @@ const App = () => {
                 <Link to="/graphics" className="graphics-nav-button">
                   Graphics Demo
                 </Link>
-                <Link to="/new6" className="grid-button">
-                  New Page 6
+                <Link to="/webapi" className="webapi-nav-button">
+                  Web API Demo
                 </Link>
                 <Link to="/strings" className="grid-button">
                   Strings Demo
@@ -85,7 +85,7 @@ const App = () => {
         <Route path="/datatypes" element={<DatatypesPage />} />
         <Route path="/errors" element={<ErrorPage />} />
         <Route path="/graphics" element={<GraphicsPage />} />
-        <Route path="/new6" element={<NewPage6 />} />
+        <Route path="/webapi" element={<WebAPIPage />} />
         <Route path="/strings" element={<StringsPage />} />
       </Routes>
     </div>

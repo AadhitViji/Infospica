@@ -1,0 +1,2 @@
+This text was loaded via the Fetch API from public/fetch_info.txt.
+yep
