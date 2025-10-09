@@ -15,7 +15,7 @@ import PromisesPage from "./pages/PromisesPage";
 import StringsPage from "./pages/StringsPage";
 import MathPage from "./pages/MathPage";
 import DatatypesPage from "./pages/DatatypesPage";
-import NewPage4 from "./pages/NewPage4";
+import ErrorPage from "./pages/ErrorPage";
 import NewPage5 from "./pages/NewPage5";
 import NewPage6 from "./pages/NewPage6";
 
@@ -52,24 +52,23 @@ const App = () => {
                 <Link to="/promises" className="promises-nav-button">
                   Promises Demo
                 </Link>
-
-                <Link to="/strings" className="grid-button">
-                  Strings Demo
+                <Link to="/maths" className="maths-nav-button">
+                  Maths Demo
                 </Link>
-                <Link to="/maths" className="grid-button">
-                  Math Demo
+                <Link to="/datatypes" className="datatypes-nav-button">
+                  Datatypes Demo
                 </Link>
-                <Link to="/datatypes" className="grid-button">
-                  Datatypes (Type Conversion)
-                </Link>
-                <Link to="/new4" className="grid-button">
-                  New Page 4
+                <Link to="/errors" className="errors-nav-button">
+                  Error Handling Demo
                 </Link>
                 <Link to="/new5" className="grid-button">
                   New Page 5
                 </Link>
                 <Link to="/new6" className="grid-button">
                   New Page 6
+                </Link>
+                <Link to="/strings" className="grid-button">
+                  Strings Demo
                 </Link>
               </div>
             </>
@@ -82,12 +81,12 @@ const App = () => {
         <Route path="/functions" element={<FunctionsPage />} />
         <Route path="/arrays" element={<ArraysPage />} />
         <Route path="/promises" element={<PromisesPage />} />
-        <Route path="/strings" element={<StringsPage />} />
         <Route path="/maths" element={<MathPage />} />
         <Route path="/datatypes" element={<DatatypesPage />} />
-        <Route path="/new4" element={<NewPage4 />} />
+        <Route path="/errors" element={<ErrorPage />} />
         <Route path="/new5" element={<NewPage5 />} />
         <Route path="/new6" element={<NewPage6 />} />
+        <Route path="/strings" element={<StringsPage />} />
       </Routes>
     </div>
   );

@@ -77,7 +77,7 @@ const MathPage = () => {
         excluded (a,b), or one-sided included [a,b), (a,b].
       </p>
 
-      <div style={{ display: "grid", gap: 12, maxWidth: 420 }}>
+      <div className="conditions-section">
         <label
           className="conditions-helper"
           style={{ display: "grid", gap: 4 }}
