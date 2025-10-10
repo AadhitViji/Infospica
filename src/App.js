@@ -77,19 +77,19 @@ const App = () => {
                 </Link>
               </div>
               <div>
-                <Link to="/task-one" className="grid-button">
+                <Link to="/task-one" className="task-button">
                   Task One
                 </Link>
-                <Link to="/task-two" className="grid-button">
+                <Link to="/task-two" className="task-button">
                   Task Two
                 </Link>
-                <Link to="/task-three" className="grid-button">
+                <Link to="/task-three" className="task-button">
                   Task Three
                 </Link>
-                <Link to="/task-four" className="grid-button">
+                <Link to="/task-four" className="task-button">
                   Task Four
                 </Link>
-                <Link to="/task-five" className="grid-button">
+                <Link to="/task-five" className="task-button">
                   Task Five
                 </Link>
               </div>
