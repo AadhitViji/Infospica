@@ -18,6 +18,11 @@ import DatatypesPage from "./pages/DatatypesPage";
 import ErrorPage from "./pages/ErrorPage";
 import GraphicsPage from "./pages/GraphicsPage";
 import WebAPIPage from "./pages/WebAPIPage";
+import TaskOnePage from "./pages/TaskOnePage";
+import TaskTwoPage from "./pages/TaskTwoPage";
+import TaskThreePage from "./pages/TaskThreePage";
+import TaskFourPage from "./pages/TaskFourPage";
+import TaskFivePage from "./pages/TaskFivePage";
 
 const App = () => {
   return (
@@ -71,6 +76,23 @@ const App = () => {
                   Strings Demo
                 </Link>
               </div>
+              <div>
+                <Link to="/task-one" className="grid-button">
+                  Task One
+                </Link>
+                <Link to="/task-two" className="grid-button">
+                  Task Two
+                </Link>
+                <Link to="/task-three" className="grid-button">
+                  Task Three
+                </Link>
+                <Link to="/task-four" className="grid-button">
+                  Task Four
+                </Link>
+                <Link to="/task-five" className="grid-button">
+                  Task Five
+                </Link>
+              </div>
             </>
           }
         />
@@ -87,6 +109,11 @@ const App = () => {
         <Route path="/graphics" element={<GraphicsPage />} />
         <Route path="/webapi" element={<WebAPIPage />} />
         <Route path="/strings" element={<StringsPage />} />
+        <Route path="/task-one" element={<TaskOnePage />} />
+        <Route path="/task-two" element={<TaskTwoPage />} />
+        <Route path="/task-three" element={<TaskThreePage />} />
+        <Route path="/task-four" element={<TaskFourPage />} />
+        <Route path="/task-five" element={<TaskFivePage />} />
       </Routes>
     </div>
   );
