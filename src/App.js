@@ -12,7 +12,7 @@ import LoopsPage from "./pages/LoopsPage";
 import FunctionsPage from "./pages/FunctionsPage";
 import ArraysPage from "./pages/ArraysPage";
 import PromisesPage from "./pages/PromisesPage";
-import StringsPage from "./pages/StringsPage";
+import CookiesPage from "./pages/CookiesPage";
 import MathPage from "./pages/MathPage";
 import DatatypesPage from "./pages/DatatypesPage";
 import ErrorPage from "./pages/ErrorPage";
@@ -72,8 +72,8 @@ const App = () => {
                 <Link to="/webapi" className="webapi-nav-button">
                   Web API Demo
                 </Link>
-                <Link to="/strings" className="grid-button">
-                  Strings Demo
+                <Link to="/cookies" className="cookies-nav-button">
+                Cookies Demo
                 </Link>
               </div>
               <div>
@@ -108,7 +108,7 @@ const App = () => {
         <Route path="/errors" element={<ErrorPage />} />
         <Route path="/graphics" element={<GraphicsPage />} />
         <Route path="/webapi" element={<WebAPIPage />} />
-        <Route path="/strings" element={<StringsPage />} />
+        <Route path="/cookies" element={<CookiesPage />} />
         <Route path="/task-one" element={<TaskOnePage />} />
         <Route path="/task-two" element={<TaskTwoPage />} />
         <Route path="/task-three" element={<TaskThreePage />} />
