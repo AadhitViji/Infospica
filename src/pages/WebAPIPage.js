@@ -1,8 +1,10 @@
 import React from "react";
 import BackButton from "../components/BackButton";
+import { useNavigate } from "react-router-dom";
 
 const WebAPIPage = () => {
   const { useEffect, useRef, useState } = React;
+  const navigate = useNavigate();
 
   // Web Worker (align with snippet: use `w`)
   const w = useRef(null);
@@ -55,6 +57,17 @@ const WebAPIPage = () => {
     }
   }
 
+  function resetWorker() {
+    const el = document.getElementById("result");
+    if (el) el.innerHTML = "0";
+    if (w.current) {
+      try {
+        w.current.terminate();
+      } catch (e) {}
+      w.current = null;
+    }
+  }
+
   // Fetch API: same words/functions/refs as snippet
   async function getText(file) {
     try {
@@ -100,9 +113,16 @@ const WebAPIPage = () => {
   // Web History API handlers (for the buttons below)
   function goBackTwoPages() {
     try {
-      window.history.go(-2);
+      if (window.history.length > 2) {
+        window.history.go(-2);
+      } else if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        navigate("/");
+      }
     } catch (e) {
       console.error("Failed to go back 2 pages:", e);
+      navigate("/");
     }
   }
 
@@ -116,7 +136,7 @@ const WebAPIPage = () => {
 
   return (
     <div className="conditions-container">
-      <h1>New Page 6</h1>
+      <h1>Web APIs</h1>
 
       {/* Web Workers API Demo */}
       <div className="conditions-section">
@@ -127,6 +147,7 @@ const WebAPIPage = () => {
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
           <button onClick={startWorker}>Start Worker</button>
           <button onClick={stopWorker}>Stop Worker</button>
+          <button onClick={resetWorker}>Reset</button>
         </div>
       </div>
 
@@ -134,9 +155,7 @@ const WebAPIPage = () => {
       <div className="conditions-section">
         <h2>JavaScript Fetch API</h2>
         <p id="demo">Fetch a file to change this text.</p>
-        {fetchError && (
-          <p style={{ color: "red" }}>{fetchError}</p>
-        )}
+        {fetchError && <p style={{ color: "red" }}>{fetchError}</p>}
       </div>
 
       {/* Geolocation API Demo */}
@@ -146,10 +165,10 @@ const WebAPIPage = () => {
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
           <button onClick={getLocation}>Try It</button>
         </div>
-        <p id="geo-demo" className="conditions-helper">No coordinates yet.</p>
-        {geoError && (
-          <p style={{ color: "red" }}>{geoError}</p>
-        )}
+        <p id="geo-demo" className="conditions-helper">
+          No coordinates yet.
+        </p>
+        {geoError && <p style={{ color: "red" }}>{geoError}</p>}
       </div>
 
       {/* Web History API Demo */}
