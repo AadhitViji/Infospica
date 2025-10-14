@@ -40,6 +40,8 @@ function TaskThreePage() {
     // Display current count with styling</p>
 
     <div>
+      <h2>Task Three</h2>
+      <h3>Interactive Counter</h3>
       <div>
         <div
           style={{

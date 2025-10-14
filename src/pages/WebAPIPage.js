@@ -118,7 +118,7 @@ const WebAPIPage = () => {
   function goBackTwoPages() {
     try {
       if (window.history.length > 2) {
-        window.history.go(-4);
+        window.history.go(-2);
       }
       // else if (window.history.length > 1) {
       //   window.history.back();
