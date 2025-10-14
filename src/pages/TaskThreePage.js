@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Back() {
   try {
     window.history.back();
+    console.log("Navigating back to home");
   } catch (e) {
     console.error("Failed to go back:", e);
   }
@@ -10,6 +11,10 @@ function Back() {
 
 function TaskThreePage() {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log("TaskThreePage loaded");
+  }, []);
 
   const increment = () => setCount((prev) => prev + 1);
   const decrement = () => {

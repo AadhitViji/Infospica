@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BackButton from "../components/BackButton";
 
 const ErrorPage = () => {
@@ -6,6 +6,10 @@ const ErrorPage = () => {
   const [message, setMessage] = useState("");
   const [errorName, setErrorName] = useState("");
   const [finallyNote, setFinallyNote] = useState("");
+
+  useEffect(() => {
+    console.log("ErrorPage loaded");
+  }, []);
 
   // Demo state for named errors
   const [demoErrName, setDemoErrName] = useState("");

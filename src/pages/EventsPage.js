@@ -10,7 +10,7 @@ const EventsPage = () => {
 
   // onLoad event
   useEffect(() => {
-    console.log("Component loaded");
+    console.log("EventsPage loaded");
   }, []);
 
   // Log hover events
@@ -48,7 +48,9 @@ const EventsPage = () => {
 
       <div className="conditions-section">
         <h2>onChange Event</h2>
-        <label htmlFor="changeInput" className="conditions-label">Type something</label>
+        <label htmlFor="changeInput" className="conditions-label">
+          Type something
+        </label>
         <input
           id="changeInput"
           className="conditions-input"
@@ -57,29 +59,35 @@ const EventsPage = () => {
           onChange={handleInputChange}
           placeholder="Type something..."
         />
-        <p className="conditions-badge">Current value: {inputValue || 'Empty'}</p>
+        <p className="conditions-badge">
+          Current value: {inputValue || "Empty"}
+        </p>
       </div>
 
       <div className="conditions-section">
         <h2>onClick Event</h2>
-        <button onClick={handleButtonClick} className="demo-button">Click me!</button>
+        <button onClick={handleButtonClick} className="demo-button">
+          Click me!
+        </button>
       </div>
 
       <div className="conditions-section">
         <h2>onMouseOver / onMouseOut</h2>
         <div
-          className={`hover-box ${isHovered ? 'hovered' : ''}`}
+          className={`hover-box ${isHovered ? "hovered" : ""}`}
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
         >
           <p>Hover over this area to see the effect</p>
-          <p>Hover state: {isHovered ? 'Hovered' : 'Not hovered'}</p>
+          <p>Hover state: {isHovered ? "Hovered" : "Not hovered"}</p>
         </div>
       </div>
 
       <div className="conditions-section">
         <h2>onKeyDown Event</h2>
-        <label htmlFor="keyInput" className="conditions-label">Press any key inside the input</label>
+        <label htmlFor="keyInput" className="conditions-label">
+          Press any key inside the input
+        </label>
         <input
           id="keyInput"
           className="conditions-input"
@@ -87,7 +95,9 @@ const EventsPage = () => {
           onKeyDown={handleKeyDown}
           placeholder="Press any key..."
         />
-        <p className="conditions-badge">Last key pressed: {keyPressed || 'None'}</p>
+        <p className="conditions-badge">
+          Last key pressed: {keyPressed || "None"}
+        </p>
       </div>
 
       <BackButton />

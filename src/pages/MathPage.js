@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BackButton from "../components/BackButton";
 
 // Helper to generate a random integer with different interval inclusivity
@@ -57,6 +57,10 @@ const MathPage = () => {
   const [mode, setMode] = useState("[a,b]");
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    console.log("MathPage loaded");
+  }, []);
 
   const generate = () => {
     const { value, error: err } = getRandomIntByInterval(min, max, mode);

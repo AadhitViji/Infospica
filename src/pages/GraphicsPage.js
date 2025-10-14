@@ -14,6 +14,10 @@ const GraphicsPage = () => {
   const googleRef = useRef(null);
 
   useEffect(() => {
+    console.log("GraphicsPage loaded");
+  }, []);
+
+  useEffect(() => {
     // Plotly.js example (Donut Pie)
     if (plotlyRef.current) {
       const labels = ["Italy", "France", "Spain", "USA", "Argentina"];

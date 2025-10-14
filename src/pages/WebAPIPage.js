@@ -16,6 +16,10 @@ const WebAPIPage = () => {
   const geoWatchIdRef = useRef(null);
   const [geoError, setGeoError] = useState("");
 
+  useEffect(() => {
+    console.log("WebAPIPage loaded");
+  }, []);
+
   // Load text via Fetch API on mount
   useEffect(() => {
     getText("fetch_info.txt");
@@ -114,12 +118,13 @@ const WebAPIPage = () => {
   function goBackTwoPages() {
     try {
       if (window.history.length > 2) {
-        window.history.go(-2);
-      } else if (window.history.length > 1) {
-        window.history.back();
-      } else {
-        navigate("/");
+        window.history.go(-4);
       }
+      // else if (window.history.length > 1) {
+      //   window.history.back();
+      // } else {
+      //   navigate("/");
+      // }
     } catch (e) {
       console.error("Failed to go back 2 pages:", e);
       navigate("/");

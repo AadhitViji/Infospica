@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BackButton from "../components/BackButton";
 
 const DatatypesPage = () => {
@@ -26,6 +26,10 @@ const DatatypesPage = () => {
   const [numToBoolInput, setNumToBoolInput] = useState("0");
   const [numToBool, setNumToBool] = useState(null);
   const [numToBoolErr, setNumToBoolErr] = useState("");
+
+  useEffect(() => {
+    console.log("DatatypesPage loaded");
+  }, []);
 
   // Converters
   const convertStrToNum = () => {
