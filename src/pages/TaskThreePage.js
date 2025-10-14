@@ -25,6 +25,9 @@ function TaskThreePage() {
   };
 
   const reset = () => setCount(0);
+
+  const countColor = count > 0 ? "green" : count < 0 ? "crimson" : "#333";
+
   return (
     // <p>Task 3: Build an interactive counter
     // Increment/decrement buttons
@@ -33,7 +36,14 @@ function TaskThreePage() {
 
     <div>
       <div>
-        <div>Count: {count}</div>
+        <div
+          style={{
+            color: countColor,
+          }}
+        >
+          count: {count}
+        </div>
+
         <div>
           <button onClick={decrement} style={{ margin: "5px" }}>
             Decrement
