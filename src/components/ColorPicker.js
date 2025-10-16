@@ -90,23 +90,6 @@ function ColorPicker() {
         <span>Selected color: </span>
         <strong>{selectedColor}</strong>
       </div>
-      <div style={{ marginBottom: 12 }}>
-        <button
-          type="button"
-          onClick={() => setShowExtras((s) => !s)}
-          style={{
-            margin: 8,
-            padding: "6px 10px",
-            borderRadius: 6,
-            border: "1px solid #ccc",
-            background: "#fff",
-            cursor: "pointer",
-          }}
-          title={showExtras ? "Remove 3 extra colors" : "Add 3 extra colors"}
-        >
-          {showExtras ? "Remove extra colors" : "Add extra colors"}
-        </button>
-      </div>
 
       <div style={{ marginBottom: 12 }}>
         {workingColors.map((c) => (
@@ -127,6 +110,24 @@ function ColorPicker() {
             {c.name}
           </button>
         ))}
+      </div>
+
+      <div style={{ marginBottom: 12 }}>
+        <button
+          type="button"
+          onClick={() => setShowExtras((s) => !s)}
+          style={{
+            margin: 8,
+            padding: "6px 10px",
+            borderRadius: 6,
+            border: "1px solid #ccc",
+            background: "#fff",
+            cursor: "pointer",
+          }}
+          title={showExtras ? "Remove 3 extra colors" : "Add 3 extra colors"}
+        >
+          {showExtras ? "Remove extra colors" : "Add extra colors"}
+        </button>
       </div>
 
       {/* <div style={{ marginBottom: 12 }}>

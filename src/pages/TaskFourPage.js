@@ -12,7 +12,7 @@ function Back() {
 
 function TaskFourPage() {
   useEffect(() => {
-    console.log("TaskOnePage loaded");
+    console.log("TaskFourPage loaded");
   }, []);
 
   return (
