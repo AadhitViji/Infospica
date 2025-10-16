@@ -118,7 +118,17 @@ function ContactForm() {
           <div>
             <button
               type="submit"
-              style={{ padding: "6px 10px", marginRight: 8 }}
+              style={{
+                padding: "6px 10px",
+                marginTop: 8,
+                marginBottom: 16,
+                backgroundColor: "#28d842ff",
+                color: "#fff",
+                border: "none",
+                borderRadius: 4,
+                cursor: "pointer",
+              }}
+              title="Submit data to view below"
             >
               Submit
             </button>
