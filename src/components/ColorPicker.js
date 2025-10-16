@@ -90,6 +90,39 @@ function ColorPicker() {
         <span>Selected color: </span>
         <strong>{selectedColor}</strong>
       </div>
+      
+      <div style={{ display: "flex", justifyContent: "center", margin: "12px 0" }}>
+        <svg width={240} height={240} viewBox="0 0 240 240" style={{ display: "block" }}>
+          {(() => {
+            const total = workingColors.length || 1;
+            const cx = 120;
+            const cy = 120;
+            const r = 110;
+            return workingColors.map((c, idx) => {
+              const startAngle = (idx / total) * Math.PI * 2 - Math.PI / 2;
+              const endAngle = ((idx + 1) / total) * Math.PI * 2 - Math.PI / 2;
+              const x1 = cx + r * Math.cos(startAngle);
+              const y1 = cy + r * Math.sin(startAngle);
+              const x2 = cx + r * Math.cos(endAngle);
+              const y2 = cy + r * Math.sin(endAngle);
+              const largeArc = endAngle - startAngle > Math.PI ? 1 : 0;
+              const d = `M ${cx} ${cy} L ${x1} ${y1} A ${r} ${r} 0 ${largeArc} 1 ${x2} ${y2} Z`;
+              return (
+                <path
+                  key={`sector-${c.id}`}
+                  d={d}
+                  fill={c.name}
+                  stroke={c.name === selectedColor ? "#111" : "#ccc"}
+                  strokeWidth={c.name === selectedColor ? 2 : 1}
+                  onClick={() => handleColorClick(c.name)}
+                  title={`Set background to ${c.name}`}
+                  style={{ cursor: "pointer" }}
+                />
+              );
+            });
+          })()}
+        </svg>
+      </div>
 
       <div style={{ marginBottom: 12 }}>
         {workingColors.map((c) => (
