@@ -29,7 +29,13 @@ function ColorPicker() {
   }, [selectedColor]);
 
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: "#ffffff",
+        borderRadius: 8,
+        border: "1px solid #e5e7eb",
+      }}
+    >
       <div style={{ marginBottom: 12 }}>
         <span>Selected color: </span>
         <strong>{selectedColor}</strong>
@@ -80,7 +86,10 @@ function ColorPicker() {
         {history.length > 0 ? (
           <button
             type="button"
-            onClick={() => setHistory([])}
+            onClick={() => {
+              setHistory([]);
+              setSelectedColor("white");
+            }}
             style={{
               marginLeft: 8,
               padding: "4px 8px",
